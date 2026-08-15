@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · sf-t3-1779642675702-349</title>
+  <meta name="description" content="sf-t3-1779642675702-349에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-349.maphoshirts.xyz/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* === RESET + BASE === */
+ *, *::before, *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+ html {
+ scroll-behavior: smooth;
+ font-size: 16px;
+ }
+ body {
+ font-family: Impact, 'Impact', 'Arial Black', 'Franklin Gothic Heavy', system-ui, sans-serif;
+ background-color: #000000;
+ color: #ffffff;
+ line-height: 1.1;
+ text-transform: uppercase;
+ letter-spacing: 0.02em;
+ max-width: none;
+ padding: 0;
+ overflow-x: hidden;
+ }
+ a {
+ color: #ff3b00;
+ text-decoration: underline;
+ text-decoration-thickness: 3px;
+ text-underline-offset: 4px;
+ }
+ a:hover {
+ color: #ffffff;
+ }
+ img, svg {
+ display: block;
+ max-width: 100%;
+ height: auto;
+ }
+ /* === TYPOGRAPHY === */
+ h1 {
+ font-size: clamp(3.5rem, 12vw, 6rem);
+ font-weight: 900;
+ line-height: 0.9;
+ color: #ffffff;
+ background: #000000;
+ display: inline-block;
+ padding: 12px 18px;
+ border: 4px solid #ff3b00;
+ transform: rotate(-2deg);
+ margin-bottom: 24px;
+ text-shadow: 6px 6px 0 #ff3b00;
+ letter-spacing: -0.02em;
+ }
+ h2 {
+ font-size: clamp(2.5rem, 7vw, 4.5rem);
+ font-weight: 800;
+ line-height: 0.95;
+ color: #ffffff;
+ border-left: 8px solid #ff3b00;
+ padding-left: 24px;
+ margin-bottom: 48px;
+ text-transform: uppercase;
+ }
+ h3 {
+ font-size: clamp(1.8rem, 4vw, 3rem);
+ font-weight: 700;
+ line-height: 1;
+ color: #ff3b00;
+ margin-bottom: 24px;
+ border-bottom: 4px solid #ff3b00;
+ padding-bottom: 8px;
+ display: inline-block;
+ }
+ p {
+ font-family: 'Arial', 'Helvetica', system-ui, sans-serif;
+ font-weight: 400;
+ text-transform: none;
+ letter-spacing: 0.01em;
+ font-size: 1.2rem;
+ line-height: 1.5;
+ color: #dddddd;
+ margin-bottom: 24px;
+ }
+ strong, b {
+ color: #ff3b00;
+ }
+ /* === LAYOUT SPACE === */
+ header, nav, main, section, footer {
+ padding: 72px 48px;
+ }
+ section {
+ padding: 120px 48px;
+ border-top: 4px solid #222222;
+ }
+ .container {
+ max-width: 1400px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ .grid-2 {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ }
+ .grid-3 {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 48px;
+ }
+ .asymmetric {
+ display: grid;
+ grid-template-columns: 2fr 1.2fr 1.8fr;
+ gap: 48px;
+ align-items: start;
+ }
+ /* === COMMON COMPONENTS === */
+ .brutal-border {
+ border: 4px solid #ffffff;
+ padding: 24px;
+ background: #0a0a0a;
+ }
+ .brutal-border-accent {
+ border: 4px solid #ff3b00;
+ padding: 24px;
+ background: #000000;
+ }
+ .brutal-outline {
+ outline: 3px dashed #ff3b00;
+ outline-offset: 12px;
+ padding: 24px;
+ }
+ .skew-box {
+ transform: skewX(-5deg);
+ background: #111111;
+ border: 4px solid #ff3b00;
+ padding: 32px;
+ margin: 48px 0;
+ }
+ .skew-box > * {
+ transform: skewX(5deg);
+ }
+ .rotate-neg {
+ transform: rotate(-3deg);
+ }
+ .rotate-pos {
+ transform: rotate(2deg);
+ }
+ .badge {
+ display: inline-block;
+ background: #ff3b00;
+ color: #000000;
+ font-size: 0.9rem;
+ font-weight: 900;
+ padding: 6px 16px;
+ border: 3px solid #ffffff;
+ margin-right: 8px;
+ margin-bottom: 8px;
+ }
+ .btn {
+ display: inline-block;
+ background: #ff3b00;
+ color: #000000;
+ font-size: 1.4rem;
+ font-weight: 900;
+ padding: 16px 40px;
+ border: 4px solid #ffffff;
+ text-decoration: none;
+ text-transform: uppercase;
+ letter-spacing: 0.04em;
+ transition: all 0.15s ease;
+ cursor: pointer;
+ }
+ .btn:hover {
+ background: #ffffff;
+ color: #000000;
+ border-color: #ff3b00;
+ transform: scale(1.02);
+ }
+ /* === HEADER + NAV === */
+ header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 24px 48px;
+ border-bottom: 4px solid #ff3b00;
+ background: #000000;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ }
+ .logo {
+ font-size: 2rem;
+ font-weight: 900;
+ color: #ffffff;
+ background: #000000;
+ padding: 8px 16px;
+ border: 4px solid #ffffff;
+ transform: rotate(-1deg);
+ text-decoration: none;
+ line-height: 1;
+ }
+ .logo span {
+ color: #ff3b00;
+ }
+ nav {
+ display: flex;
+ gap: 32px;
+ align-items: center;
+ }
+ nav a {
+ color: #ffffff;
+ text-decoration: none;
+ font-size: 1.2rem;
+ font-weight: 700;
+ padding: 8px 0;
+ border-bottom: 3px solid transparent;
+ transition: 0.1s;
+ }
+ nav a:hover {
+ border-bottom-color: #ff3b00;
+ color: #ff3b00;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 6px;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 8px;
+ }
+ .hamburger span {
+ display: block;
+ width: 36px;
+ height: 4px;
+ background: #ffffff;
+ border-radius: 0;
+ }
+ .mobile-nav {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background: #111111;
+ border-bottom: 4px solid #ff3b00;
+ padding: 24px 48px;
+ flex-direction: column;
+ gap: 16px;
+ }
+ .mobile-nav.open {
+ display: flex;
+ }
+ .mobile-nav a {
+ color: #ffffff;
+ font-size: 1.5rem;
+ text-decoration: none;
+ border-bottom: 2px solid #333;
+ padding: 12px 0;
+ }
+ /* === HERO === */
+ #hero {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 72px;
+ padding: 120px 48px 48px;
+ border: none;
+ background: #000000;
+ position: relative;
+ overflow: hidden;
+ }
+ #hero::before {
+ content: '';
+ position: absolute;
+ top: -40%;
+ right: -20%;
+ width: 600px;
+ height: 600px;
+ background: radial-gradient(circle at 30% 40%, #ff3b00 0%, transparent 70%);
+ opacity: 0.3;
+ pointer-events: none;
+ z-index: 0;
+ }
+ .hero-text {
+ position: relative;
+ z-index: 1;
+ }
+ .hero-visual {
+ position: relative;
+ z-index: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: flex-end;
+ background: #0a0a0a;
+ border: 4px solid #ff3b00;
+ padding: 48px;
+ min-height: 400px;
+ transform: rotate(1deg);
+ }
+ .hero-visual svg {
+ width: 100%;
+ height: auto;
+ max-width: 400px;
+ filter: drop-shadow(12px 12px 0 #ff3b00);
+ }
+ .hero-sub {
+ font-size: 1.6rem;
+ color: #aaaaaa;
+ background: #000000;
+ display: inline-block;
+ padding: 4px 12px;
+ border-left: 6px solid #ff3b00;
+ margin-bottom: 32px;
+ transform: rotate(-1deg);
+ }
+ /* === REVIEW CARDS === */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 48px;
+ }
+ .review-card {
+ background: #0d0d0d;
+ border: 4px solid #ffffff;
+ padding: 32px;
+ position: relative;
+ transition: all 0.2s;
+ }
+ .review-card:hover {
+ border-color: #ff3b00;
+ transform: translateY(-8px);
+ }
+ .review-card .stars {
+ color: #ff3b00;
+ font-size: 1.8rem;
+ letter-spacing: 4px;
+ margin-bottom: 16px;
+ }
+ .review-card blockquote {
+ font-family: 'Arial', system-ui, sans-serif;
+ text-transform: none;
+ font-size: 1.1rem;
+ line-height: 1.6;
+ color: #cccccc;
+ margin-bottom: 24px;
+ font-style: italic;
+ }
+ .review-card .meta {
+ display: flex;
+ justify-content: space-between;
+ font-size: 0.9rem;
+ color: #888;
+ border-top: 2px solid #333;
+ padding-top: 16px;
+ text-transform: none;
+ }
+ .review-card .meta strong {
+ color: #ffffff;
+ }
+ /* === SVG ICONS / ILLUSTRATIONS === */
+ .icon-raw {
+ width: 64px;
+ height: 64px;
+ background: #ff3b00;
+ border: 4px solid #ffffff;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 2.4rem;
+ color: #000000;
+ transform: rotate(5deg);
+ margin-bottom: 24px;
+ }
+ .divider-raw {
+ width: 100%;
+ height: 8px;
+ background: repeating-linear-gradient(90deg, #ff3b00 0px, #ff3b00 20px, #000000 20px, #000000 40px);
+ margin: 48px 0;
+ border: none;
+ }
+ /* === FOOTER === */
+ footer {
+ background: #0a0a0a;
+ border-top: 4px solid #ff3b00;
+ padding: 72px 48px;
+ display: grid;
+ grid-template-columns: 2fr 1fr 1fr;
+ gap: 48px;
+ color: #777777;
+ }
+ footer h4 {
+ color: #ffffff;
+ font-size: 1.4rem;
+ margin-bottom: 24px;
+ border-bottom: 2px solid #ff3b00;
+ display: inline-block;
+ padding-bottom: 4px;
+ }
+ footer a {
+ color: #ff3b00;
+ text-decoration: underline;
+ }
+ .copyright {
+ grid-column: 1 / -1;
+ text-align: center;
+ padding-top: 48px;
+ border-top: 2px solid #222;
+ font-size: 0.9rem;
+ color: #555;
+ text-transform: none;
+ }
+ /* === RESPONSIVE === */
+ @media (max-width: 768px) {
+ header {
+ padding: 16px 24px;
+ flex-wrap: wrap;
+ }
+ nav {
+ display: none;
+ }
+ .hamburger {
+ display: flex;
+ }
+ section, header, footer, #hero {
+ padding: 48px 24px;
+ }
+ #hero {
+ grid-template-columns: 1fr;
+ gap: 48px;
+ padding-top: 72px;
+ }
+ .hero-visual {
+ min-height: 250px;
+ padding: 24px;
+ align-items: center;
+ }
+ h1 {
+ font-size: 2.8rem;
+ transform: none;
+ text-shadow: 4px 4px 0 #ff3b00;
+ }
+ h2 {
+ font-size: 2rem;
+ padding-left: 16px;
+ border-left-width: 6px;
+ }
+ .grid-2, .grid-3, .asymmetric {
+ grid-template-columns: 1fr;
+ gap: 32px;
+ }
+ footer {
+ grid-template-columns: 1fr;
+ gap: 32px;
+ }
+ .skew-box {
+ transform: none;
+ padding: 24px;
+ }
+ .skew-box > * {
+ transform: none;
+ }
+ .review-grid {
+ gap: 32px;
+ }
+ }
+ @media (max-width: 480px) {
+ .logo {
+ font-size: 1.4rem;
+ padding: 4px 12px;
+ }
+ .btn {
+ font-size: 1rem;
+ padding: 12px 24px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · sf-t3-1779642675702-349">
+  <meta property="og:description" content="sf-t3-1779642675702-349에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-349.maphoshirts.xyz/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <a href="/" class="logo"><span>🔥</span> 서버<span>웜업</span></a>
+ <nav>
+ <a href="#hero">홈</a>
+ <a href="#services">서비스</a>
+ <a href="#reviews">후기</a>
+ <a href="#contact">문의</a>
+ 
+ </nav>
+ <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+ 
+ </button>
+ <div class="mobile-nav" id="mobileNav">
+ <a href="#hero">홈</a>
+ <a href="#services">서비스</a>
+ <a href="#reviews">후기</a>
+ <a href="#contact">문의</a>
+ 
+ </div>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1923.html">구글 상위노출 대행으로 마포 서버 웜업 업소의 검색 가시성 확보하기</a>
+        <p class="post-item__summary">마포 지역에서 서버 웜업 업종을 운영하는 사업자라면 온라인 마케팅의 중요성을 실감할 것이다. 키워드 검색 결과에서 상위권에 노출되는 것이 실제 방문과 문의로 이어지기 때문이다. 특히 지역 기반 서비</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1924.html">구글 상위노출 대행으로 마포 비즈니스 성장 가속화</a>
+        <p class="post-item__summary">구글 상위노출 대행은 검색엔진에서 상위 노출을 돕는 서비스입니다. 마포 지역 비즈니스를 위한 키워드 분석과 링크 구축이 핵심 요소입니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1925.html">마포 서버 웜업 업체가 구글 상위노출 대행을 고려해야 하는 이유</a>
+        <p class="post-item__summary">서버 웜업을 운영하는 마포 지역 사업자라면 구글 검색에서의 가시성이 곧 매출로 이어진다는 점을 잘 알고 있을 것이다. 아무리 안정적인 인프라를 갖추었더라도 잠재 고객에게 노출되지 않는다면 제대로 된</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1926.html">구글 상위노출 대행으로 마포 지역 비즈니스 성장시키기</a>
+        <p class="post-item__summary">마포의 중소기업은 대부분 검색 노출을 통한 고객 유치에 직면해 있다. 구글 상위노출 대행은 검색 결과에서 상단에 배치되어 신뢰도를 높이고 신규 거래를 끌어들이는 핵심 전략이다. 특히 경쟁이 치열한 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1927.html">마포 지역 맞춤 구글 상위노출 대행, 서버 웜업으로 차별화된 접근</a>
+        <p class="post-item__summary">온라인 비즈니스에서 구글 검색 순위는 곧 매출과 직결됩니다. 특히 마포 지역의 로컬 비즈니스라면 더욱 세밀한 전략이 필요한데, 단순히 키워드를 채우는 방식으로는 더 이상 상위 노출을 기대하기 어렵습</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1928.html">구글 상위노출 대행, 마포 지역 비즈니스 성공을 가속하다</a>
+        <p class="post-item__summary">구글 상위노출 대행은 마포에서 스타트업이 빠르게 시장에 진입하도록 돕는다. 검색 최적화와 로컬링크를 맞춤 배치해 트래픽을 집중시킨다. 초기 리서치 단계에서 경쟁사 패턴을 분석해 전략을 수립한다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1929.html">마포 서버 웜업 업체, 구글 상위노출 대행 전략 이렇게 준비하라</a>
+        <p class="post-item__summary">서버 웜업 분야에서도 온라인 가시성이 사업 성패를 가르는 시대다. 마포 지역에서 서버 웜업을 운영 중이라면 구글 상위노출 대행 서비스를 통해 검색 결과 상단에 자리잡는 전략이 필요하다. 신규 고객은</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1930.html">구글 상위노출 대행이 마포 가게를 빛나게 하는 비결</a>
+        <p class="post-item__summary">구글 상위노출 대행은 웹사이트가 검색 결과 상단에 노출되도록 돕는 전문적인 서비스입니다. 특히 마포 지역의 작은 가게나 스타트업도 이 서비스를 통해 자연스럽게 고객에게 다가갈 수 있습니다. 검색 알</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1931.html">마포 지역 비즈니스를 위한 구글 상위노출 대행 전략</a>
+        <p class="post-item__summary">마포 지역에서 비즈니스를 운영 중이라면 검색 결과 상위 노출이 얼마나 중요한지 실감하고 있을 것이다. 사이트의 기초 체력을 키우는 서버 웜업 과정은 SEO 작업의 출발점으로, 안정적인 인프라 없이는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1932.html">마포 창업자를 위한 구글 상위노출 대행의 핵심 전략</a>
+        <p class="post-item__summary">구글 상위노출 대행은, 검색 엔진에 맞춘 키워드 최적화와 콘텐츠 전략으로 사이트를 빠르게 상위에 올립니다. 마포 지역에서는 작은 온라인 매장에서도 눈에 띄는 순위 상승을 기대할 수 있죠.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1933.html">마포 지역 맞춤 구글 상위노출 대행, 서버 안정성이 답이다</a>
+        <p class="post-item__summary">구글 상위노출을 위한 SEO 대행을 선택할 때, 지역 비즈니스는 특히 서버 환경의 안정성을 간과하기 쉽습니다. 마포 지역을 타겟으로 한 SEO 전략은 단순히 키워드 배치만으로는 부족하며, 검색 엔진</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1934.html">마포에서 찾는 구글 상위노출 대행, 당신의 비즈니스를 돋보이게</a>
+        <p class="post-item__summary">온라인 비즈니스의 성공은 검색 결과에서 눈에 띄는 것에 달려 있습니다. 특히 구글 검색에서 첫 페이지에 오른다는 것은 신뢰성과 매출 증대로 이어질 수 있습니다. 하지만 경쟁이 치열해지며, 키워드 최</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1935.html">마포 지역 구글 상위노출 대행, 서버 안정성이 첫걸음</a>
+        <p class="post-item__summary">구글 검색 결과에서 상위권에 진입하기 위해서는 단순한 키워드 배치 이상의 전략이 필요하다. 특히 검색 엔진의 알고리즘이 날로 정교해지면서 콘텐츠의 질과 함께 기술적 최적화가 중요한 요소로 자리잡고 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1936.html">구글 상위노출 대행으로 마포 비즈니스의 가시성을 극대화하기</a>
+        <p class="post-item__summary">구글 상위노출 대행은 기업이 온라인에서 돋보이게 돕는 핵심 서비스다. 검색 엔진 최적화(SEO)와 웹사이트 구조 개선, 키워드 전략을 통해 노출 순위를 향상시켜준다. 특히 지역 비즈니스라면 마포와 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1937.html">마포 지역 서버 웜업 사업자의 구글 상위노출 대행 전략</a>
+        <p class="post-item__summary">서버 웜업 사업자에게 구글 상위노출 대행은 단순한 키워드 광고 이상의 접근이 필요하다. 특히 마포 지역에서 서버 웜업 서비스를 운영할 경우 경쟁사 대비 차별화된 온라인 가시성이 중요해지고 있다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1938.html">구글 상위노출 대행으로 마포 지역 비즈니스 성장 이끌기</a>
+        <p class="post-item__summary">디지털 마케팅에서 구글 상위노출 대행은 원하는 키워드에 대한 검색 결과 상단에 노출되도록 돕는 전문 서비스입니다. 도메인 신뢰도가 높으면 검색 엔진은 해당 사이트를 우선적으로 표시합니다. 따라서 S</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1939.html">마포 지역 구글 상위노출 대행, 서버 웜업이 중요한 이유</a>
+        <p class="post-item__summary">마포 지역에서 구글 상위노출 대행 서비스를 찾는 업체들이 눈에 띄게 늘었다. 상위에 노출되기 위해서는 키워드 선정, 사이트 구조, 기술적 최적화까지 여러 요소가 유기적으로 조화를 이루어야 한다. 경</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1940.html">구글 상위노출 대행, 마포 지역의 차세대 서버 웜업 전략</a>
+        <p class="post-item__summary">마포 동네의 유동인구와 브랜드 경쟁은 눈덩이처럼 커져가기 만이다. 오래된 온사이트 최적화 전략은 이제 한계에 부딪히고, 최신 구글 알고리즘에 부합하는 동적 접근법이 요구된다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0211.html">구글 상위노출 대행 의뢰 전 4</a>
+        <p class="post-item__summary">효과적인 마케팅 성과를 얻기 위해서는 기술적 인프라와 적절한 인원 구성이 필수 충족 조건입니다. 구글 상위노출 대행 서비스를 검토할 때, 단순히 업체에 맡기는 것이 아니라 스스로 자동화 로직을 이해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0212.html">구글 상위노출 대행 비교 시 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">마케팅 대행사를 찾으면서 혹시 눈에 보이는 화려한 홍보 문구에만 집중하고 있지는 않으신가요? 여러분이 사업을 위해 합리적인 선택을 고민하듯, 가라오케와 같은 서비스를 선택할 때도 기준점이 필요합니다</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
